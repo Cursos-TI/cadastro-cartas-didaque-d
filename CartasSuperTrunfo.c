@@ -7,14 +7,16 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     char estado, codigo[20], cidade[20];
-    int populacao, turismo;
-    float area, pib, densidade, capita;
+    int turismo;
+    float area, pib, densidade, capita, superPoder;
+    unsigned int populacao;
 
   // Área para definição das variáveis para armazenar as propriedades das cidades
   //cidade 2clear
     char estado2, codigo2[20], cidade2[20];
-    int populacao2, turismo2;
-    float area2, pib2, densidade2, capita2;
+    int turismo2;
+    float area2, pib2, densidade2, capita2, superPoder2;
+    unsigned int populacao2;
   // Área para entrada de dados
   // carta 1
     printf("Carta 1\n");
@@ -25,7 +27,7 @@ int main() {
     printf("Insira o nome da cidade: \n");
     scanf(" %s", &cidade);
     printf("Insira o numero de habitantes: \n");
-    scanf("%d", &populacao);
+    scanf("%u", &populacao);
     printf("Insira a Area: \n");
     scanf("%f", &area);
     printf("Insira o PIB: \n");
@@ -40,6 +42,11 @@ int main() {
     //dividindo pib pela populacao
     capita = pib / populacao;
 
+    //parte 3
+    //super poder
+    superPoder = populacao + turismo + area + pib + (1 /densidade) + capita;
+    
+
 
   // Área para exibição dos dados da cidade
   //carta 1
@@ -47,7 +54,7 @@ int main() {
     printf("Estado: %c \n", estado);
     printf("Codigo: %s \n", codigo);
     printf("Cidade: %s \n", cidade);
-    printf("Populacao: %d \n", populacao);
+    printf("Populacao: %u \n", populacao);
     printf("Area: %f \n", area);
     printf("PIB: %f \n", pib);
     printf("Pontos Turisticos: %d \n", turismo);
@@ -67,7 +74,7 @@ int main() {
     printf("Insira o nome da cidade: \n");
     scanf(" %s", &cidade2);
     printf("Insira o numero de habitantes: \n");
-    scanf("%d", &populacao2);
+    scanf("%u", &populacao2);
     printf("Insira a Area: \n");
     scanf("%f", &area2);
     printf("Insira o PIB: \n");
@@ -80,6 +87,10 @@ int main() {
     densidade2 = populacao / area;
     //dividindo pib pela populacao
     capita2 = pib / populacao;
+
+    //parte 3
+    //super poder
+    superPoder2 = populacao2 + turismo2 + area2 + pib2 + (1 / densidade2) + capita2;
    
   // Área para exibição dos dados da cidade
   //carta 2
@@ -87,7 +98,7 @@ int main() {
     printf("Estado: %c \n", estado2);
     printf("Codigo: %s \n", codigo2);
     printf("Cidade: %s \n", cidade2);
-    printf("Populacao: %d \n", populacao2);
+    printf("Populacao: %u \n", populacao2);
     printf("Area: %f \n", area2);
     printf("PIB: %f \n", pib2);
     printf("Pontos Turisticos: %d \n", turismo2);
@@ -96,6 +107,17 @@ int main() {
     printf("Densidade pupulacional: %f \n", densidade2);
     //saida do pib per capita
     printf("PIB per Capita: %f \n", capita2);
- 
+
+    //parte3
+    //comparacao
+    printf("Populacao: Carta 1 venceu %d \n", populacao > populacao2);
+    printf("Area: Carta 1 venceu %d \n", area > area2);
+    printf("PIB: Carta 1 venceu %d \n", pib > pib2);
+    printf("Pontos Turisticos: Carta 1 venceu %d \n", turismo > turismo2);
+    printf("Densidade: Carta 1 venceu %d \n", densidade < densidade2);
+    printf("PIB per Capita: Carta 1 venceu %d \n", capita > capita2);
+    printf("Super Poder: Carta 1 venceu %d \n", superPoder > superPoder2);
+    
+
 return 0;
 } 
