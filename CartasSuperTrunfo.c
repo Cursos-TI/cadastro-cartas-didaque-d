@@ -142,7 +142,7 @@ int main() {
     
     case 2:
       printf("O atributo escolhido foi: Densidade\n");
-    if(densidade > densidade2){
+    if(densidade < densidade2){
       printf("A carta 1 venceu!\n %.2f", densidade);
     }else{
       printf("A carta 2 venceu!\n %.2f", densidade2);
