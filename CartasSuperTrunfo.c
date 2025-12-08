@@ -7,7 +7,7 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     char estado, codigo[20], cidade[20];
-    int turismo;
+    int turismo, opt;
     float area, pib, densidade, capita, superPoder;
     unsigned int populacao;
 
@@ -17,6 +17,13 @@ int main() {
     int turismo2;
     float area2, pib2, densidade2, capita2, superPoder2;
     unsigned int populacao2;
+
+    //inicio e menu do jogo
+    printf("Seja Bem-Vindo ao Super Trunfo!\n Escolha um atributo para comparar: \n");
+    printf(" 1 - Area\n 2 - PIB\n 3 - Densidade\n 4 - PIB per Capita\n 5 - Super Poder\n Numero: " );
+    scanf("%d", &opt);
+    
+
   // Área para entrada de dados
   // carta 1
     printf("Carta 1\n");
@@ -46,7 +53,7 @@ int main() {
     //super poder
     superPoder = populacao + turismo + area + pib + (1 /densidade) + capita;
     
-
+    
 
   // Área para exibição dos dados da cidade
   //carta 1
@@ -118,13 +125,46 @@ int main() {
     printf("PIB per Capita: Carta 1 venceu %d \n", capita > capita2);
     printf("Super Poder: Carta 1 venceu %d \n", superPoder > superPoder2);
     
+
     //comparacao com if
-    printf("O atributo escolhido foi: Area\n");
+    //originalmente, era um hard code; alterei para que o jogador 1 pudesse escolher
+    //A linha tambem mudou de posicao para que seja executado antes de apresentar os resultados
+    switch (opt)
+    {
+    case 1:
+      printf("O atributo escolhido foi: Area\n");
     if(area > area2){
       printf("A carta 1 venceu!\n %.2f", area);
     }else{
       printf("A carta 2 venceu!\n %.2f", area2);
     }
+      break;
+    
+    case 2:
+      printf("O atributo escolhido foi: Densidade\n");
+    if(densidade > densidade2){
+      printf("A carta 1 venceu!\n %.2f", densidade);
+    }else{
+      printf("A carta 2 venceu!\n %.2f", densidade2);
+    }
+      break;
 
+    case 3:
+      printf("O atributo escolhido foi: Pib per Capita\n");
+    if(capita > capita2){
+      printf("A carta 1 venceu!\n %.2f", capita);
+    }else{
+      printf("A carta 2 venceu!\n %.2f", capita2);
+    }
+
+    case 4:
+    printf("O atributo escolhido foi: Super Poder\n");
+    if(superPoder > superPoder2){
+      printf("A carta 1 venceu!\n %.2f", superPoder);
+    }else{
+      printf("A carta 2 venceu!\n %.2f", superPoder2);
+    }
+    }
+    //pib, densidade, capita, superPoder;
 return 0;
 } 
